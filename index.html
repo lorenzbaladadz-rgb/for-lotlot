@@ -874,7 +874,10 @@
   function openLetter() {
     if (opened) return;
     opened = true;
-    song.play().then(() => { if (songOK) soundBtn.classList.add('show'); fadeIn(); }).catch(() => {});
+    soundBtn.classList.add('show');
+song.play().then(() => {
+  if (songOK) fadeIn();
+}).catch(() => {});
     cover.classList.add('crack');
     buzz(20);
     setTimeout(() => cover.classList.add('open'), FAST ? 60 : 650);
